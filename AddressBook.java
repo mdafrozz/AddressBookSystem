@@ -51,18 +51,18 @@ public class AddressBook {
 					printContacts();
 		}
 	
-	//Display Contact		
-	public Contact printContacts() {
-		if (listContact.isEmpty()) {
-			System.out.println("No Records!!!");
-		} else {
-			for (Contact contacts : listContact) {
-				System.out.println(contacts);
+	// Print Contacts
+		public Contact printContacts() {
+			if (listContact.isEmpty()) {
+				System.out.println("No Records!!!");
+			} else {
+				for (Contact contacts : listContact) {
+					System.out.println(contacts);
+				}
 			}
+			return con;
 		}
-		return con;
-	}
-	
+		
 	// Edit and update Contacts
 		public void editContact() {
 			System.out.println("Enter the person name for update");
@@ -130,4 +130,7 @@ public class AddressBook {
 			}
 			printContacts();
 		}
+
+		
+	
 }
