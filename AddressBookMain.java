@@ -31,7 +31,7 @@ public class AddressBookMain {
 				break;
 			case 2:
 				System.out.println("Update Contact");
-				
+				a.editContact();
 				break;
 			case 3:
 				System.out.println("Delete Contact");
