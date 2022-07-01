@@ -4,6 +4,7 @@
 package main;
 
 
+import java.util.HashMap;
 import java.util.Scanner;
 /**
  * @author MD_AFROZ
@@ -15,7 +16,12 @@ public class AddressBookMain {
 		
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
-		AddressBook a = new AddressBook();
+		HashMap<String, AddressBook> services = new HashMap<>();
+		System.out.println("*****Enter Unique Address Book Name*****");
+		String addressBookNameAsKey = scanner.nextLine().toUpperCase();
+		System.out.println(addressBookNameAsKey);
+		AddressBook addressBookNameValue = new AddressBook();
+		services.put(addressBookNameAsKey, addressBookNameValue);
 		
 		boolean exit = false;
 		System.out.println("Enter Your Choice");
@@ -27,15 +33,15 @@ public class AddressBookMain {
 			switch (choice) {
 			case 1:
 				System.out.println("Add New Contact");
-				a.addContact(null);
+				services.get(addressBookNameAsKey).addContact(null);
 				break;
 			case 2:
 				System.out.println("Update Contact");
-				a.editContact();
+				services.get(addressBookNameAsKey).editContact();
 				break;
 			case 3:
 				System.out.println("Delete Contact");
-				a.deleteContactByName();
+				services.get(addressBookNameAsKey).deleteContactByName();
 				break;
 			case 4:
 				exit = true;
