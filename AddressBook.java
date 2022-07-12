@@ -173,19 +173,59 @@ public class AddressBook {
 		printContacts();
 	}
 	
-	//Search contact with city name
+	// Search contact with city name
 		public void searchContact() {
-			System.out.println("Enter city name ");
-			String city = scanner.next();
-			System.out.println("Enter state name");
-			String state = scanner.next();
-			
-			for (Contact result : listContact) {
-				if (city.equalsIgnoreCase(result.getCity()) || state.equalsIgnoreCase(result.getState())) {
-					System.out.println("View persons contact by searching city or state :");
-					System.out.println(result);
-				} else {
-					System.out.println("No such a records in adddressbook");
+			boolean exit = false;
+			System.out.println("Enter Your Choice");
+
+			while (!exit) {
+
+				System.out.println("1.Search by city \t 2.Search by state  \t *.Default");
+
+				int choice = scanner.nextInt();
+				switch (choice) {
+				case 1:
+					System.out.println("****Search person by city****");
+					System.out.println("Enter city name ");
+					String city = scanner.next();
+					int countCity = 0;
+					if (listContact.isEmpty()) {
+						System.out.println("No Records!!!");
+					}
+					for (Contact result : listContact) {
+						if (city.equalsIgnoreCase(result.getCity())) {
+							System.out.println("View persons contact by searching city :");
+							System.out.println(result);
+							countCity++;
+							System.out.println("The number of persons in city :" + countCity);
+						} else {
+							System.out.println();
+						}
+					}
+					break;
+				case 2:
+					System.out.println("****Search person by state****");
+					System.out.println("Enter state name");
+					String state = scanner.next();
+					int countState = 0;
+					if (listContact.isEmpty()) {
+						System.out.println("No Records!!!");
+					}
+					for (Contact result : listContact) {
+						if (state.equalsIgnoreCase(result.getState())) {
+							System.out.println("View persons contact by searching state :");
+							System.out.println(result);
+							countState++;
+							System.out.println("The number of persons in state :" + countState);
+						} else {
+							System.out.println();
+						}
+					}
+				default:
+					exit = true;
+					System.out.println("Exit Choices");
+					break;
+
 				}
 			}
 		}
