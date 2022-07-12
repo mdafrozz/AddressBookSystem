@@ -172,4 +172,20 @@ public class AddressBook {
 		}
 		printContacts();
 	}
+	
+	//Search contact with city name
+		public void searchContact() {
+			System.out.println("Enter city name ");
+			String city = scanner.next();
+			System.out.println("Enter state name");
+			String state = scanner.next();
+			
+			for (Contact result : listContact) {
+				if (city.equalsIgnoreCase(result.getCity()) || state.equalsIgnoreCase(result.getState())) {
+					System.out.println(result);
+				} else {
+					System.out.println("No such a records in adddressbook");
+				}
+			}
+		}
 }

@@ -38,11 +38,11 @@ public class AddressBookMain {
 				System.out.println("Update Contact");
 				services.get(addressBookNameAsKey).editContact();
 				break;
-			case 3:
-				System.out.println("Delete Contact");
-				services.get(addressBookNameAsKey).deleteContactByName();
-				break;
 			case 4:
+				System.out.println("Search Contact");
+				services.get(addressBookNameAsKey).searchContact();
+				break;
+			case 5:
 				exit = true;
 				System.out.println("Thank you.....!!!");
 				break;
