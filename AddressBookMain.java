@@ -14,7 +14,6 @@ public class AddressBookMain {
 	public static void main(String[] args) {
 		System.out.println("<-------------Welcome To Address Book----------------->");
 		
-		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		HashMap<String, AddressBook> services = new HashMap<>();
 		System.out.println("*****Enter Unique Address Book Name*****");
@@ -27,9 +26,9 @@ public class AddressBookMain {
 		System.out.println("Enter Your Choice");
 		
 		while (!exit) {
-			System.out.println("1.Create Contact\t 2.Edit Contact\t 3.Delete Contact\t 4.Quit");
+			System.out.println("1.Create/Add Contact\t 2.Update Contact\t 3.Delete Contact\t 4.Quit");
 			int choice = scanner.nextInt();
-			
+			scanner.close();
 			switch (choice) {
 			case 1:
 				System.out.println("Add New Contact");
@@ -48,11 +47,10 @@ public class AddressBookMain {
 				System.out.println("Thank you.....!!!");
 				break;
 			default:
-				System.out.println("Please Enter a valid choice..!!");
+				System.out.println("Application is quit...");
 				break;
 			}
 		}
-		
+		System.out.println("You are out of choice of multiple addressbook");
 	}
-
 }
